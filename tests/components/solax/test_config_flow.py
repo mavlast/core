@@ -38,7 +38,7 @@ async def test_form_success(hass: HomeAssistant) -> None:
     ) as mock_setup_entry:
         entry_result = await hass.config_entries.flow.async_configure(
             flow["flow_id"],
-            {CONF_IP_ADDRESS: "192.168.1.87", CONF_PORT: 80, CONF_PASSWORD: "password"},
+            {CONF_IP_ADDRESS: "192.168.1.100", CONF_PORT: 80, CONF_PASSWORD: "H34A10I3477319"},
         )
         await hass.async_block_till_done()
 
@@ -66,7 +66,7 @@ async def test_form_connect_error(hass: HomeAssistant) -> None:
     ):
         entry_result = await hass.config_entries.flow.async_configure(
             flow["flow_id"],
-            {CONF_IP_ADDRESS: "192.168.1.87", CONF_PORT: 80, CONF_PASSWORD: "password"},
+            {CONF_IP_ADDRESS: "192.168.1.100", CONF_PORT: 80, CONF_PASSWORD: "H34A10I3477319"},
         )
 
     assert entry_result["type"] == "form"
@@ -87,7 +87,7 @@ async def test_form_unknown_error(hass: HomeAssistant) -> None:
     ):
         entry_result = await hass.config_entries.flow.async_configure(
             flow["flow_id"],
-            {CONF_IP_ADDRESS: "192.168.1.87", CONF_PORT: 80, CONF_PASSWORD: "password"},
+            {CONF_IP_ADDRESS: "192.168.1.100", CONF_PORT: 80, CONF_PASSWORD: "H34A10I3477319"},
         )
 
     assert entry_result["type"] == "form"
